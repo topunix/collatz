@@ -16,20 +16,20 @@ This program finds the number with the longest sequence length within a given ra
 For an input file with the line: 1 10, the program will calculate the sequence length for every number between 1 and 10. The output will be: 1 10 20, as the number 9 has the longest sequence (9 -> 28 -> 14 -> 7 -> 22 -> 11 -> 34 -> 17 -> 52 -> 26 -> 13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1), with a length of 20.
 
 ## Features
-Parallel Processing: Utilizes Python's ProcessPoolExecutor to distribute the computation of Collatz sequences across multiple CPU cores, dramatically reducing processing time.
+* __Parallel Processing:__ Utilizes Python's ProcessPoolExecutor to distribute the computation of Collatz sequences across multiple CPU cores, dramatically reducing processing time.
 
-Robust Error Handling: The script is designed to handle common file and data errors, including:
+* __Robust Error Handling:__ The script is designed to handle common file and data errors, including:
 
-File not found or unreadable due to permissions.
+   * File not found or unreadable due to permissions.
 
-Empty input files.
+   * Empty input files.
 
-Lines with incorrect number formats or non-numeric characters.
+   * Lines with incorrect number formats or non-numeric characters.
 
-Lines with more or less than two numbers.
+   * Lines with more or less than two numbers.
 
-Non-positive integer inputs.
+   * Non-positive integer inputs.
 
-Flexible Input: The program can read numbers separated by various whitespace characters (spaces, tabs, newlines) on a single line.
+* __Flexible Input:__ The program can read numbers separated by various whitespace characters (spaces, tabs, newlines) on a single line.
 
-Clear Output: Provides real-time feedback on the processing status and outputs the final result for each number pair.
+* __Clear Output:__ Provides real-time feedback on the processing status and outputs the final result for each number pair.
