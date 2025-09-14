@@ -54,5 +54,32 @@ For an input file with the line: 1 10, the program will calculate the sequence l
 # Example of invalid input
 1 five
 ```
+3. __Run from the command line:__ Open your terminal or command prompt and navigate to the directory where you saved the files. Run the script by providing the input file path as a command-line argument:
+```python
+python collatz_processor.py input_data.txt
+```
+If you run the script without a file path, it will default to using a file named test-input.txt.
+
+## How It Works
+The core of the program is its ability to parallelize the Collatz calculation.
+
+1. __File Reading:__ The script reads the input file line by line, gracefully skipping empty lines or comments.
+
+2. __Data Parsing:__ It attempts to parse two numbers from each valid line, handling any formatting errors and providing descriptive error messages to the user without crashing.
+
+3. __Why Not NumPy?:__ The Collatz calculation is a good example of an __"embarrassingly parallel"__ problem, but not a __vectorizable__ one.
+
+    * __Vectorization__ (what NumPy excels at) is about applying a single operation to an entire array of numbers at once. For example, squaring every number in a list. The Collatz problem is different because each step in the sequence depends on the result of the previous step (n -> n/2 or n -> 3n + 1), so you can't calculate them all at once.
+
+    * __Parallelism__ is about running many independent tasks at the same time. While the steps within a single Collatz sequence are sequential, the calculation for the number 50,000 is completely independent of the calculation for 50,001. This allows us to run these tasks in parallel, with each CPU core handling a different number, which is a perfect fit for this problem.
+
+4. __Parallel Execution:__ For each valid number pair (i, j), the script creates a range of numbers from min(i, j) to max(i, j).
+
+5. __ProcessPoolExecutor:__ The executor.map() function then takes the collatz_total_count function and applies it to every number in the range, running these tasks in parallel across all available CPU cores.
+
+6. __Finding the Maximum:__ Once all the parallel calculations are complete, max() is used to find the highest total count from the results.
+
+7. __Output:__ The script prints the original numbers and the final maximum Collatz total count to the console.
+
 
 
