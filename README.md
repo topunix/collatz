@@ -33,3 +33,26 @@ For an input file with the line: 1 10, the program will calculate the sequence l
 * __Flexible Input:__ The program can read numbers separated by various whitespace characters (spaces, tabs, newlines) on a single line.
 
 * __Clear Output:__ Provides real-time feedback on the processing status and outputs the final result for each number pair.
+
+## Prerequisites
+* Python 3.6 or higher.
+
+## How to Run
+1. __Save the script:__ Ensure the collatz_processor.py file is saved in a directory on your computer.
+
+2. __Prepare an input file:__ Create a text file (e.g., input_data.txt) with one or more pairs of positive integers, separated by spaces or other whitespace, on each line. You can also include comments with a # at the beginning of the line.
+
+3. __Example__ `input_data.txt`:
+```python
+# Calculate for two small ranges
+1 10
+100 200
+
+# A very large range that benefits from parallelism
+50000 60000
+
+# Example of invalid input
+1 five
+```
+
+
