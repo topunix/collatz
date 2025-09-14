@@ -81,5 +81,14 @@ The core of the program is its ability to parallelize the Collatz calculation.
 
 7. __Output:__ The script prints the original numbers and the final maximum Collatz total count to the console.
 
+## Code Structure
+* `collatz_total_count(n)`: A function that calculates the length of a single Collatz sequence. It is designed to be "map-able," meaning it takes a single argument and performs a CPU-intensive task, which is ideal for parallel processing.
+
+* `main(input_filename)`: The main entry point of the script that handles file I/O, error handling, and orchestrates the parallel execution.
+
+* `if __name__ == "__main__":`: This block ensures the main function is called only when the script is executed directly. It also handles command-line arguments.
+
+## License
+This project is licensed under the MIT License.
 
 
