@@ -1,4 +1,4 @@
-# Collatz Processor with Parallel Execution
+# CPU-parallel Collatz sequence engine for large integer ranges.
 A Python script that reads pairs of integers from a file and efficiently calculates the maximum Collatz sequence length within the specified range. The program uses parallel processing to significantly speed up the calculations for large number ranges.
 
 ## The Collatz Conjecture
